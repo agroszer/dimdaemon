@@ -1,0 +1,10 @@
+[Unit]
+Description=A simple and lightweight backlight-dimming daemon for laptops
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/dimdaemon
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
