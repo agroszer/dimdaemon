@@ -2,7 +2,7 @@
 
 # enter time in sec
 # use bool for active
-# set dim in percentage of maximum screenbrightness
+# set dim in percentage of maximum screenbrightness 
 # The display name is in /sys/class/backlight/
 # The power supply name is in /sys/class/power_supply/
 # Set relative to true if you want that dimdaemon dinamically dims your screen brightness; obviously undimpercet will not be used.
@@ -12,8 +12,8 @@ enviroment:
 {
 userhome = "/home/user";
 displayname = "acpi_video0";
-powersupplyname = "AC";
-relative = true;
+powersupplyname = "ADP1";
+relative = false;
 }
 # on AC
 ac:

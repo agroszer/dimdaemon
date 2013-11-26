@@ -106,7 +106,7 @@ void parseconfig(string filename) {
 	config.lookupValue("enviroment.displayname", displayname);
 	config.lookupValue("enviroment.powersupplyname", powersupplyname);
 	config.lookupValue("enviroment.relative", relative);
-	
+
 	config.lookupValue("ac.active", ac_active);
 	config.lookupValue("ac.undimpercent", undimpercentac);
 	config.lookupValue("ac.dimtime", idletimedimac);
@@ -121,7 +121,7 @@ void parseconfig(string filename) {
 	idletimedimbat *= 1000;
 	config.lookupValue("battery.dimpercent", dimpercentbat);
 	config.lookupValue("battery.turnofftime", idletimeturnoffbat);
-	idletimeturnoffbat *= 1000;      
+	idletimeturnoffbat *= 1000;
 }
 
 void setenviroment() {
@@ -131,8 +131,8 @@ void setenviroment() {
 }
 
 int main() {
-	parseconfig("/etc/conf.d/dimdaemon.conf");
-	
+	parseconfig("/etc/dimdaemon.conf");
+
 	int oldbrightness = 0;
 	if (relative)
 		oldbrightness = getbright();
@@ -152,7 +152,7 @@ int main() {
 	close(STDIN_FILENO);
 	close(STDOUT_FILENO);
 	close(STDERR_FILENO);
-	
+
 	// check if we have a running xserver
 	while(1) {
 		setenviroment();
@@ -258,7 +258,7 @@ int main() {
 					}
 				}
 				XFree(info);
-				sleep(1);	
+				sleep(1);
 			}
 		}
 		sleep(5);
